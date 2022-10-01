@@ -66,15 +66,6 @@ float Airtime(float bal)
         scanf("%f", &credit);
     }
 
-    printf("Recharge Successful.\nAccount balance: %f.", (balance-credit));
-
+    balance -= credit;
     return(balance);
 }
-
-int main()
-{
-    float n = 12000;
-    Airtime(n);
-    return(0);
-}
-
