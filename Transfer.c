@@ -9,7 +9,7 @@
      int Balance = 50000; /** How to get this to the main function*/
 
     printf("TRANSFER\n");
-    int proceed, i, BankChoice, perform;
+    int proceed, i, j, BankChoice, perform;
 
     printf("Enter 1 to proceed\nOr 0 to exit\n: ");
     scanf("%d", &proceed);
@@ -24,10 +24,10 @@
     }
 
     printf("\nSelect your Recipient's Bank\n");
-    char BankName[6][30] ={"1. Sterling", "2. UBA", "3. First Bank", "4. Access Bank", "5. Heritage Bank", "6. GT Bank"}; 
+    char BankName[6][30] ={"Sterling", "UBA", "First Bank", "Access Bank", "Heritage Bank", "GT Bank"}; 
     for (i = 0; i < 6; i++)
     {
-        printf("%s", BankName[i]);
+        printf("%d. %s", i + 1, BankName[i]);
         printf("\n");
     }
     printf("\n: ");
@@ -62,6 +62,8 @@
     {
         Balance -= TransferAmount;
         printf("\nTransfer Successful!\n");
+        printf("You have successfully transferrred %d to %s, %s\n\n", TransferAmount, AccNo,BankName[BankChoice - 1] );
+    
 
 
         printf("Enter 1 to perform another transfer or 2 to exit\n: ");
