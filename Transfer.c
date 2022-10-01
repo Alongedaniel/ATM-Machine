@@ -101,6 +101,5 @@
       */
 
       Transfer();
-      printf("\nDo you want to Perform another transfer\n1 to perform another transfer\n2 to exit\n: ");
       return (0);
  }
