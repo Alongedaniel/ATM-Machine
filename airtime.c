@@ -1,4 +1,3 @@
-#include "main.h"
 #include <stdio.h>
 #include <string.h>
 
@@ -29,7 +28,7 @@ float Airtime(float bal)
         scanf("%d", &k);
     }
 
-    int l;
+    unsigned int l;
     printf("\nDo not include first 0.\nRecipient mobile number: ");
     scanf("%d", &l);
 
@@ -43,6 +42,7 @@ float Airtime(float bal)
     {
         printf("Enter valid Recipient mobile number.\nRecipient mobile number: ");
         scanf("%d", &l);
+        printf("%d", l);
 
         int count = 0;
         while (l!=0)
@@ -50,6 +50,7 @@ float Airtime(float bal)
            count++;
            l /= 10;
         }
+        printf("%d", count);
         if (count == 10 )
             break;
     }
@@ -66,6 +67,15 @@ float Airtime(float bal)
         scanf("%f", &credit);
     }
 
-    balance -= credit;
+    printf("Recharge Successful.\nAccount balance: %f.", (balance-credit));
+
     return(balance);
 }
+
+int main()
+{
+    float n = 12000;
+    Airtime(n);
+    return(0);
+}
+
