@@ -19,7 +19,7 @@ float Airtime(float bal)
     int k = j;
     while(k < 0 || k >4)
     {
-        printf ("\nselect valid option:\n");
+        printf ("\nSelect valid option:\n");
         for (i = 0; i < 4; i++)
         {
             printf("Press %d for ", i+1);
@@ -38,20 +38,18 @@ float Airtime(float bal)
         l /= 10;
         ++count;
     }while (l != 0);
-    //printf("Number of digits: %d", count);
 
     while (count < 10 || count > 10)
     {
         printf("Enter valid Recipient mobile number.\nRecipient mobile number: ");
         scanf("%d", &l);
 
-        int cunt = 0;
+        int count = 0;
         while (l!=0)
         {
-           cunt++;
+           count++;
            l /= 10;
         }
-        int count = cunt;
         if (count == 10 )
             break;
     }
@@ -72,3 +70,11 @@ float Airtime(float bal)
 
     return(balance);
 }
+
+int main()
+{
+    float n = 12000;
+    Airtime(n);
+    return(0);
+}
+
