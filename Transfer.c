@@ -35,19 +35,21 @@
     
     scanf("%d", &BankChoice);
     
-    /**char AccNo[10];
-    printf("\nEnter Recipient's Account No\n:  ");
-    scanf("%s", AccNo);
-    // int AccNolength = strlen(AccNo); 
-    int AccNolength = sizeof(AccNo) / sizeof(char); 
-    printf("%d", AccNolength);
-    **/
-   
-   /** while (AccNolength != 10)
+/** Using the strlen fun to test acc no validity*/
+
+    char AccNo[13] = {0};
+    do
     {
-        printf("\nInvlaid Account Number\n\nEnter Recipient's Account No\n:  ");
-        scanf("%s", AccNo);
-    }**/
+        printf("\nEnter Recipient's Account No\n:  ");
+        scanf("%13s", AccNo);
+        if (strlen(AccNo) != 10)
+        {
+            printf("\nInvlaid Account Number!\n\n");
+        }
+    } while (strlen(AccNo) != 10);
+
+
+
     int TransferAmount;
     printf("\nEnter Amount to Transfer\n: ");
     scanf("%d", &TransferAmount);
