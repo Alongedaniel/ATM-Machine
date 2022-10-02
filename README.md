@@ -28,24 +28,13 @@ Check Balance
 Contributors to this project:
 
 . 
-|     NAME                              Github Profile
-├── Alonge Daniel             https://github.com/Alongedaniel
+|
+├── NAME ── Alonge Daniel       ||     Github Profile ── https://github.com/Alongedaniel
 
-├── Oluwasegun Omotosho       https://github.com/Oluwasegun4
+├── NAME ── Oluwasegun Omotosho  ||   Github Profile ── https://github.com/Oluwasegun4
 
-├── Happiness Adebayo         https://github.com/Happiness0952
+├── NAME ── Happiness Adebayo    ||   Github Profile ── https://github.com/Happiness0952
 
-├── Israel Ogboi              https://github.com/OgboiIsrael
+├── NAME ── Israel Ogboi         ||   Github Profile ── https://github.com/OgboiIsrael
 
-├── Anthony Okpo              https://github.com/anthonyokpo
-
-
-
-
-
-
-
-
-
-
-
+├── NAME ── Anthony Okpo       ||     Github Profile ── https://github.com/anthonyokpo
