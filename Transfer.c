@@ -3,10 +3,10 @@
 /**
  *
  */
+ float Balance = 50000; /* Global variable for balance */
 
  void Transfer(void)
  {
-     int Balance = 50000; /** How to get this to the main function*/
 
     printf("TRANSFER\n");
     int proceed, i, j, BankChoice, perform;
@@ -50,9 +50,9 @@
 
 
 
-    int TransferAmount;
+    float TransferAmount;
     printf("\nEnter Amount to Transfer\n: ");
-    scanf("%d", &TransferAmount);
+    scanf("%f", &TransferAmount);
 
     int confirm;
 
@@ -60,9 +60,10 @@
     scanf("%d", &confirm);
     if (confirm == 1)
     {
-        Balance -= TransferAmount;
+        /* The global var Balance is in use here to get the value of the balance after transfer confirmation */
+        Balance -= TransferAmount; 
         printf("\nTransfer Successful!\n");
-        printf("You have successfully transferrred %d to %s, %s\n\n", TransferAmount, AccNo,BankName[BankChoice - 1] );
+        printf("You have successfully transferrred %.2f to %s, %s\n\n", TransferAmount, AccNo,BankName[BankChoice - 1] );
     
 
 
@@ -103,5 +104,7 @@
       */
 
       Transfer();
+      /* This is just to show the balance after the transfer that was made */
+      printf("Your Balance is %.2f", Balance);
       return (0);
  }
