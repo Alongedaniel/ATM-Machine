@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-float Airtime(float bal)
+void Airtime()
 {
     char carrier[4][9] = {"MTN", "Airtel", "Glo", "9Mobile"};
     int i, j, proceed, perform;
@@ -70,14 +70,14 @@ float Airtime(float bal)
             break;
     }while (strlen(num) != 10);
 
-    float balance = bal;
+    //float balance = bal;
     float credit;
     printf("\nHOW MUCH DO YOU WANT TO RECHARGE?\n");
     scanf("%f", &credit);
 
-    while (credit > balance)
+    while (credit > Balance)
     {
-        printf("\nINSUFFICIENT FUNDS\n\nAccount balance %f.", balance);
+        printf("\nINSUFFICIENT FUNDS\n\nAccount balance %f.", Balance);
         printf("\nRecharge amount: ");
         scanf("%f", &credit);
     }
@@ -88,7 +88,7 @@ float Airtime(float bal)
 
     if (confirm == 1)
     {
-        balance -= credit;
+        Balance -= credit;
         printf("\nRECHARGE SUCCESSFUL.\n");
         //printf("%s", num);
 
@@ -99,7 +99,7 @@ float Airtime(float bal)
 
         if (perform == 1)
         {
-            Airtime(balance);
+            Airtime();
         }
         else if (perform == 2)
         {
@@ -114,14 +114,14 @@ float Airtime(float bal)
 
         if (perform == 1)
         {
-            Airtime(bal);
+            Airtime();
         }
         else if (perform == 2)
         {
             exit(2);
         }
     }
-    return(balance);
+    return();
 }
 
 //Additions to make
