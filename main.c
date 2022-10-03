@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "main.h"
 
-int Balance = 100000;
+float Balance = 100000;
 
 int main()
 {
