@@ -129,10 +129,10 @@ float Airtime(float bal)
 //go back to homepage
 //confirmation if you want to send the amount
 
-int main()
+/*int main()
 {
     float n = 12000;
     Airtime(n);
     return(0);
-}
+}*/
 
