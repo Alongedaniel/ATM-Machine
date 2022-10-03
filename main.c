@@ -76,8 +76,9 @@ int main()
         scanf("%d", &option);
         if (option == 1)
         {
-            printf("\tAirtime\n");
+            // printf("\tAirtime\n");
             // DO AIRTIME
+            Airtime();
         }
         else if (option == 2)
         {

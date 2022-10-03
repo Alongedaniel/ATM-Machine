@@ -123,18 +123,5 @@ void Airtime()
             exit(2);
         }
     }
-    return();
 }
-
-//Additions to make
-//press 0 to go back
-//go back to homepage
-//confirmation if you want to send the amount
-
-/*int main()
-{
-    float n = 12000;
-    Airtime(n);
-    return(0);
-}*/
 

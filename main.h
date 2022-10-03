@@ -3,5 +3,5 @@
 
 int setPin();
 void Transfer(void);
-void airtime();
+void Airtime();
 #endif
