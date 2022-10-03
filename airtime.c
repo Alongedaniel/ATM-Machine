@@ -2,6 +2,8 @@
 #include <stdlib.h>
 #include <string.h>
 
+extern float Balance;
+
 void Airtime()
 {
     char carrier[4][9] = {"MTN", "Airtel", "Glo", "9Mobile"};
@@ -77,7 +79,7 @@ void Airtime()
 
     while (credit > Balance)
     {
-        printf("\nINSUFFICIENT FUNDS\n\nAccount balance %f.", Balance);
+        printf("\nINSUFFICIENT FUNDS\n\nAccount balance %.2f.", Balance);
         printf("\nRecharge amount: ");
         scanf("%f", &credit);
     }
