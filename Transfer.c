@@ -1,9 +1,9 @@
 #include <stdio.h>
 #include <string.h>
 /**
- *
+ * Transfer - Perfroms all transfers for the user
+ * Return: Always 0
  */
- float Balance = 50000; /* Global variable for balance */
 
  void Transfer(void)
  {
@@ -22,7 +22,7 @@
     {
         return;
     }
-
+    Bank:
     printf("\nSelect your Recipient's Bank\n");
     char BankName[6][30] ={"Sterling", "UBA", "First Bank", "Access Bank", "Heritage Bank", "GT Bank"}; 
     for (i = 0; i < 6; i++)
@@ -34,6 +34,11 @@
 
     
     scanf("%d", &BankChoice);
+    if (BankChoice > 6 || BankChoice < 1)
+    {
+        printf("Invalid Selection");
+        goto Bank;
+    }
     
 /** Using the strlen fun to test acc no validity*/
 
@@ -51,9 +56,15 @@
 
 
     float TransferAmount;
+    
     printf("\nEnter Amount to Transfer\n: ");
     scanf("%f", &TransferAmount);
-
+    
+    if (TransferAmount > Balance)
+    {
+        printf("Insufficient Funds\nYour Balance is %.2f\n", Balance);
+        goto Perform;
+    }
     int confirm;
 
     printf("\nConfirm Transfer \n1. Yes \n2. No\n: ");
@@ -66,7 +77,7 @@
         printf("You have successfully transferrred %.2f to %s, %s\n\n", TransferAmount, AccNo,BankName[BankChoice - 1] );
     
 
-
+        Perform:
         printf("Enter 1 to perform another transfer or 2 to exit\n: ");
         scanf("%d", &perform);
 
@@ -95,16 +106,4 @@
         }
     }
 
- }
-
- int main(void)
- {
-     /**
-      * main - Calls other functions
-      */
-
-      Transfer();
-      /* This is just to show the balance after the transfer that was made */
-      printf("Your Balance is %.2f", Balance);
-      return (0);
  }
