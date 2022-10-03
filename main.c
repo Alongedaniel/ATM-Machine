@@ -86,8 +86,10 @@ int main()
         }
         else if (option == 3)
         {
-            printf("\tTransfer\n");
+            // printf("\tTransfer\n");
             // DO TRANSFER
+            Transfer();
+            printf("Your balance is %.2f\n", Balance);
         }
         else if (option == 4)
         {

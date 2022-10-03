@@ -2,4 +2,6 @@
 #define MAIN_H
 
 int setPin();
+void Transfer(void);
+void airtime();
 #endif

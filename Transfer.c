@@ -4,9 +4,10 @@
  * Transfer - Perfroms all transfers for the user
  * Return: Always 0
  */
+extern float Balance;
 
- void Transfer(void)
- {
+void Transfer(void)
+{
 
     printf("TRANSFER\n");
     int proceed, i, j, BankChoice, perform;
@@ -22,9 +23,9 @@
     {
         return;
     }
-    Bank:
+Bank:
     printf("\nSelect your Recipient's Bank\n");
-    char BankName[6][30] ={"Sterling", "UBA", "First Bank", "Access Bank", "Heritage Bank", "GT Bank"}; 
+    char BankName[6][30] = {"Sterling", "UBA", "First Bank", "Access Bank", "Heritage Bank", "GT Bank"};
     for (i = 0; i < 6; i++)
     {
         printf("%d. %s", i + 1, BankName[i]);
@@ -32,15 +33,14 @@
     }
     printf("\n: ");
 
-    
     scanf("%d", &BankChoice);
     if (BankChoice > 6 || BankChoice < 1)
     {
         printf("Invalid Selection");
         goto Bank;
     }
-    
-/** Using the strlen fun to test acc no validity*/
+
+    /** Using the strlen fun to test acc no validity*/
 
     char AccNo[13] = {0};
     do
@@ -53,13 +53,11 @@
         }
     } while (strlen(AccNo) != 10);
 
-
-
     float TransferAmount;
-    
+
     printf("\nEnter Amount to Transfer\n: ");
     scanf("%f", &TransferAmount);
-    
+
     if (TransferAmount > Balance)
     {
         printf("Insufficient Funds\nYour Balance is %.2f\n", Balance);
@@ -72,12 +70,11 @@
     if (confirm == 1)
     {
         /* The global var Balance is in use here to get the value of the balance after transfer confirmation */
-        Balance -= TransferAmount; 
+        Balance -= TransferAmount;
         printf("\nTransfer Successful!\n");
-        printf("You have successfully transferrred %.2f to %s, %s\n\n", TransferAmount, AccNo,BankName[BankChoice - 1] );
-    
+        printf("You have successfully transferrred %.2f to %s, %s\n\n", TransferAmount, AccNo, BankName[BankChoice - 1]);
 
-        Perform:
+    Perform:
         printf("Enter 1 to perform another transfer or 2 to exit\n: ");
         scanf("%d", &perform);
 
@@ -89,13 +86,13 @@
         {
             return;
         }
-
     }
-    else if (confirm == 2);
+    else if (confirm == 2)
+        ;
     {
-         printf("\nDo you want to Perform another transfer\n1 to perform another transfer\n2 to exit\n: ");
+        printf("\nDo you want to Perform another transfer\n1 to perform another transfer\n2 to exit\n: ");
         scanf("%d", &perform);
-        
+
         if (perform == 1)
         {
             Transfer();
@@ -105,5 +102,4 @@
             return;
         }
     }
-
- }
+}
