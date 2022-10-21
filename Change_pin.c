@@ -18,6 +18,10 @@ int Change_pin(){
             printf("Pin must contain 4 digits\n");
             goto new;
         } else {
+            if (newPin == oldPin) {
+                printf("Same as old, enter a different pin");
+                goto new;
+            }
             setpin = newPin;
             printf("Pin changed Successfully\n");
         }
