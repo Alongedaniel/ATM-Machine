@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include "main.h"
+#include <string.h>
 
 float Balance = 100000;
 
@@ -24,48 +25,26 @@ int main()
 
     scanf("%s ", &fname);
     scanf("%s", &lname);
+
     if (!(((fname >= 'a') && (fname <= 'z')) || ((fname >= 'A') && (fname <= 'Z'))) && !(((lname >= 'a') && (lname <= 'z')) || ((lname >= 'A') && (lname <= 'Z'))))
     {
-        printf("Name only letters\n");
+        printf("\nName should contain letters only\n\n");
         main();
     }
 
-    // else
-    // {
-
-    int loop = 0;
-
-    // int setpin;
-    // printf("\nSet your pin\nat least 4 digits\n: ");
-    // scanf("%d", &setpin);
-    // // at least 4 characters can also be done
-    // if ((setpin < 1000) || (setpin > 9999))
-    // {
-    //     printf("\nPin must contain 4 digits");
-    //     loop = -1;
-    //     // printf("\nEnter your pin: ");
-    // }
-    // else
-    // {
-    //     loop = 0;
-    // }
+    // Set up pin
     setPin();
-
+//
+    int loop = 0;
     menu:
     while (loop >= 0)
     {
-
-        // int enterpin;
-        // printf("\nEnter your pin: ");
-        // scanf("%d", enterpin);
-        // if (enterpin = setpin)
-        // {
         /**
          * @brief
          *
          */
 
-        printf("\n\t Hello, Welcome to ATM\n");
+        printf("\n\tHello %s, Welcome to ATM\n", &lname);
 
         /**
          * ATM options
@@ -116,22 +95,15 @@ int main()
             {
                 goto menu;
             }
-            // else {
-            //     printf("\nSelect a valid option: ");
-            //     scanf("%d", &end);
-            // }
+
         }
         else
         {
             printf("\n\nSelect a valid option");
         }
-        // }
-        // else{
-        //     printf("wrong pin");
-        //     loop = 0;
-        // }
+
         int menu;
-        printf("Press 1 to go to main menu and 0 to exit: ");
+        printf("Press 1 to perform another transaction or 0 to exit: ");
         scanf("%d", &menu);
         if (menu == 1)
         {
