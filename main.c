@@ -51,6 +51,7 @@ int main()
     // }
     setPin();
 
+    menu:
     while (loop >= 0)
     {
 
@@ -94,12 +95,12 @@ int main()
         }
         else if (option == 4)
         {
-            printf("\tChange Pin\n");
+            Change_pin();
             // DO CHANGE PIN
         }
         else if (option == 5)
         {
-            printf("\tCheck Balane\n");
+            Check_balance();
             // DO CHECK Balance
         }
         else if (option == 6)
@@ -109,11 +110,11 @@ int main()
             scanf("%d", &end);
             if (end == 1)
             {
-                loop = -1;
+                goto exit;
             }
             else if (end == 2)
             {
-                loop = 0;
+                goto menu;
             }
             // else {
             //     printf("\nSelect a valid option: ");
@@ -138,6 +139,7 @@ int main()
         }
         else
         {
+            exit:
             printf("Thank you for banking with us!");
             loop = -1;
         }

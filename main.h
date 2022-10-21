@@ -4,4 +4,6 @@
 int setPin();
 void Transfer(void);
 void Airtime();
+int Change_pin();
+void Check_balance();
 #endif
