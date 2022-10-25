@@ -20,23 +20,45 @@ int main()
      * Request your name
      */
     printf("Enter your name: ");
-    char fname;
-    char lname;
+    // Make variabes a string
+    char fname[30];
+    char lname[30];
 
     scanf("%s ", &fname);
     scanf("%s", &lname);
 
-    if (!(((fname >= 'a') && (fname <= 'z')) || ((fname >= 'A') && (fname <= 'Z'))) && !(((lname >= 'a') && (lname <= 'z')) || ((lname >= 'A') && (lname <= 'Z'))))
+    // if (!((((fname >= 'a') && (fname <= 'z')) || ((fname >= 'A') && (fname <= 'Z'))) && (((lname >= 'a') && (lname <= 'z')) || ((lname >= 'A') && (lname <= 'Z')))))
+    // {
+    //     printf("\nName should contain letters only\n\n");
+    //     main();
+    // }
+
+    int a, p, x;
+    p = strlen(fname);
+    for (a = 0; a < p; a++)
     {
-        printf("\nName should contain letters only\n\n");
-        main();
+        if (!((fname[i] >= 'a' && fname[i] <= 'z') || (fname[i] >= 'A' && fname[i] <= 'Z') || (fname[i] == ' ')))
+        {
+            printf("\nName should contain letters only\n\n");
+            main();
+        }
+    }
+
+    x = strlen(lname);
+    for (a = 0; a < x; a++)
+    {
+        if (!((lname[i] >= 'a' && lname[i] <= 'z') || (lname[i] >= 'A' && lname[i] <= 'Z') || (lname[i] == ' ')))
+        {
+            printf("\nName should contain letters only\n\n");
+            main();
+        }
     }
 
     // Set up pin
     setPin();
-//
+    //
     int loop = 0;
-    menu:
+menu:
     while (loop >= 0)
     {
         /**
@@ -44,7 +66,7 @@ int main()
          *
          */
 
-        printf("\n\tHello %s, Welcome to ATM\n", &lname);
+        printf("\n\tHello %s, Welcome to ATM\n", lname);
 
         /**
          * ATM options
@@ -70,7 +92,6 @@ int main()
             // printf("\tTransfer\n");
             // DO TRANSFER
             Transfer();
-            printf("Your balance is %.2f\n", Balance);
         }
         else if (option == 4)
         {
@@ -95,7 +116,6 @@ int main()
             {
                 goto menu;
             }
-
         }
         else
         {
@@ -108,10 +128,11 @@ int main()
         if (menu == 1)
         {
             loop = 0;
+            // goto menu;
         }
         else
         {
-            exit:
+        exit:
             printf("Thank you for banking with us!");
             loop = -1;
         }
