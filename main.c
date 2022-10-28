@@ -3,10 +3,12 @@
 #include <string.h>
 
 float Balance = 100000;
+extern char setpin[i];
 
 int main()
 {
     int option;
+    char mypin[4];
 
     /**
      * This is the interface for the ATM
@@ -24,8 +26,8 @@ int main()
     char fname[30];
     char lname[30];
 
-    scanf("%s ", &fname);
-    scanf("%s", &lname);
+    scanf("%s ", fname);
+    scanf("%s", lname);
 
     // if (!((((fname >= 'a') && (fname <= 'z')) || ((fname >= 'A') && (fname <= 'Z'))) && (((lname >= 'a') && (lname <= 'z')) || ((lname >= 'A') && (lname <= 'Z')))))
     // {
@@ -66,7 +68,7 @@ menu:
          *
          */
 
-        printf("\n\tHello %s, Welcome to ATM\n", lname);
+        printf("\n\tHello %s, Welcome to ATM\n", &lname);
 
         /**
          * ATM options
@@ -129,6 +131,22 @@ menu:
         {
             loop = 0;
             // goto menu;
+        mypin:
+            printf("\nEnter your pin: ");
+            scanf("%s", mypin);
+            // at least 4 characters can also be done
+            // Another area to check
+            if (strcmp(setpin, mypin) != 0)
+            {
+                printf("Wrong pin!");
+                goto mypin;
+            }
+
+            if ((mypin[i] >= 'a' && mypin[i] <= 'z') || (mypin[i] >= 'A' && mypin[i] <= 'Z') || (atoi(mypin) < 1000 || atoi(mypin) > 9999))
+            {
+                printf("Pin must contain 4 digits\n");
+                goto mypin;
+            }
         }
         else
         {
