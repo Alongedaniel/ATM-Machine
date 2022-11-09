@@ -50,5 +50,5 @@ old:
                 printf("Pin changed Successfully\n");
             }
         }
-    return *newPin;
+    return *setpin;
 }
