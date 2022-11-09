@@ -33,8 +33,4 @@ Contributors to this project:
 
 ├── NAME ── Oluwasegun Omotosho  ||   Github Profile ── https://github.com/Oluwasegun4
 
-├── NAME ── Happiness Adebayo    ||   Github Profile ── https://github.com/Happiness0952
-
 ├── NAME ── Israel Ogboi         ||   Github Profile ── https://github.com/OgboiIsrael
-
-├── NAME ── Anthony Okpo       ||     Github Profile ── https://github.com/anthonyokpo
