@@ -108,7 +108,7 @@ menu:
         }
         else if (option == 6)
         {
-            printf("ARE YOU SURE YOU WANT TO QUIT?1-yes/2-no ");
+            printf("ARE YOU SURE YOU WANT TO QUIT?\n1. Yes or 2. No ");
             int end;
             scanf("%d", &end);
             if (end == 1)
