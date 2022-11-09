@@ -88,6 +88,7 @@ menu:
         {
             // printf("\tWithdrawal\n");
             // DO WITHDRAWAL
+            withdrawal();
         }
         else if (option == 3)
         {
