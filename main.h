@@ -12,4 +12,5 @@ void Transfer(void);
 void Airtime();
 int Change_pin();
 void Check_balance();
+void withdrawal(void);
 #endif
