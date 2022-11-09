@@ -21,7 +21,7 @@ int main()
     /**
      * Request your name
      */
-    printf("Enter your name: ");
+    printf("ENTER YOUR NAME: ");
     // Make variabes a string
     char fname[30];
     char lname[30];
@@ -60,7 +60,6 @@ int main()
     setPin();
     //
     int loop = 0;
-menu:
     while (loop >= 0)
     {
         /**
@@ -74,7 +73,8 @@ menu:
          * ATM options
          */
 
-        printf("\n1: Airtime\t\t\t2: Withdrawal\n\n3: Transfer\t\t\t4: Change Pin\n\n5: Check Balance\t\t6: Quit\n\n");
+menu:
+        printf("\n1: AIRTIME\t\t\t2: WITHDRAWAL\n\n3: TRANSFER\t\t\t4: CHANGE PIN\n\n5: CHECK BALANCE\t\t6: QUIT\n\n");
 
         printf("Select option: ");
         scanf("%d", &option);
@@ -86,7 +86,7 @@ menu:
         }
         else if (option == 2)
         {
-            printf("\tWithdrawal\n");
+            // printf("\tWithdrawal\n");
             // DO WITHDRAWAL
         }
         else if (option == 3)
@@ -107,7 +107,7 @@ menu:
         }
         else if (option == 6)
         {
-            printf("Are you sure you want to quit?1-yes/2-no ");
+            printf("ARE YOU SURE YOU WANT TO QUIT?1-yes/2-no ");
             int end;
             scanf("%d", &end);
             if (end == 1)
@@ -121,18 +121,17 @@ menu:
         }
         else
         {
-            printf("\n\nSelect a valid option");
+            printf("\n\nSELECT A VALID OPTION");
         }
 
         int menu;
-        printf("Press 1 to perform another transaction or 0 to exit: ");
+        printf("PRESS 1 TO PERFORM ANOTHER TRANSACTION OR 0 TO EXIT: ");
         scanf("%d", &menu);
         if (menu == 1)
         {
-            loop = 0;
-            // goto menu;
+            // loop = 0;
         mypin:
-            printf("\nEnter your pin: ");
+            printf("\nENTER YOUR PIN: ");
             scanf("%s", mypin);
             // at least 4 characters can also be done
             // Another area to check
@@ -147,11 +146,12 @@ menu:
                 printf("Pin must contain 4 digits\n");
                 goto mypin;
             }
+            goto menu;
         }
         else
         {
         exit:
-            printf("Thank you for banking with us!");
+            printf("THANK YOU FOR BANKING WITH US!\n");
             loop = -1;
         }
     }
