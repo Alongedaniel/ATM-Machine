@@ -4,22 +4,22 @@ extern char setpin[i];
 
 int Change_pin()
 {
-    char newPin[4];
-    char oldPin[4];
-    char confirmNew[4];
+    char newPin[i];
+    char oldPin[i];
+    char confirmNew[i];
 
-    printf("\t======== Change Pin ========\n");
+    printf("\t======== CHANGE PIN ========\n");
 old:
-    printf("\nEnter old pin: ");
-    scanf("%s", &oldPin);
+    printf("\nENTER OLD PIN: ");
+    scanf("%s", oldPin);
     if (strcmp(oldPin, setpin) != 0)
         {
         printf("Incorrect old pin!");
         goto old;
     }
 
-    new :    printf("\nEnter new pin: ");
-        scanf("%s", &newPin);
+    new :    printf("\nENTER NEW PIN: ");
+        scanf("%s", newPin);
         if ((newPin[i] >= 'a' && newPin[i] <= 'z') || (newPin[i] >= 'A' && newPin[i] <= 'Z') || (atoi(newPin) < 1000 || atoi(newPin) > 9999))
         {
             printf("Pin must contain 4 digits\n");
@@ -32,8 +32,8 @@ old:
         }
         else
         {
-        confirm :    printf("\nConfirm new pin: ");
-            scanf("%s", &confirmNew);
+        confirm :    printf("\nCONFIRM NEW PIN: ");
+            scanf("%s", confirmNew);
             if ((confirmNew[i] >= 'a' && confirmNew[i] <= 'z') || (confirmNew[i] >= 'A' && confirmNew[i] <= 'Z') || (atoi(confirmNew) < 1000 || atoi(confirmNew) > 9999))
             {
                 printf("Pin must contain 4 digits\n");

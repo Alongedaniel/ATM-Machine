@@ -6,24 +6,24 @@ extern float Balance;
 
 void Airtime()
 {
-    char carrier[4][9] = {"MTN", "Airtel", "Glo", "9Mobile"};
-    int i, j, proceed, perform;
+    char carrier[5][9] = {"MTN", "Airtel", "Glo", "9Mobile", "Exit"};
+    int i, j;
 
     printf("\nPURCHASE AIRTIME\n\n");
-    printf("Press 1 to Proceed\nPress 0 to Exit\n\n: ");
-    scanf("%d", &proceed);
+    // printf("Press 1 to Proceed\nPress 0 to Exit\n\n: ");
+    // scanf("%d", &proceed);
 
-    if (proceed == 1)
-    {
-        ;
-    }
-    else if (proceed == 0)
-    {
-        exit(2);
-    }
+    // if (proceed == 1)
+    // {
+    //     ;
+    // }
+    // else if (proceed == 0)
+    // {
+    //     exit(2);
+    // }
 
     printf("\nSELECT MOBILE NETWORK CARRIER\n\n");
-    for (i = 0; i < 4; i++)
+    for (i = 0; i < 5; i++)
     {
         printf("Press %d for ", i+1);
         puts(carrier[i]);
@@ -31,11 +31,12 @@ void Airtime()
     printf("\n: ");
     scanf("%d", &j);
 
+
     int k = j;
-    while(k < 0 || k >4)
+    while(k < 0 || k >5)
     {
-        printf ("\nSelect valid option:\n\n");
-        for (i = 0; i < 4; i++)
+        printf ("\nSELECT VALID OPTION:\n\n");
+        for (i = 0; i < 5; i++)
         {
             printf("Press %d for ", i+1);
             puts(carrier[i]);
@@ -43,6 +44,9 @@ void Airtime()
         printf("\n: ");
         scanf("%d", &k);
     }
+
+    if (k == 5)
+        return;
 
     /*unsigned int l;
     printf("\nRECIPIENT MOBILE NUMBER: +234");
@@ -66,7 +70,7 @@ void Airtime()
 
     do{
         printf("\nEnter valid Recipient mobile number.\nRecipient mobile number: +234(0)");
-        scanf("%s", &num);
+        scanf("%s", num);
 
         if (strlen(num) == 10 )
             break;
@@ -96,32 +100,20 @@ void Airtime()
 
         printf("\nYou have successfully recharged %.2f on 0%s, %s.\nAmount to be received shortly.\n\n", credit, num, carrier[k-1] );
 
-        printf("\nDo you want to purchase airtime?\n\nPress 1 to Continue\nPress 2 to Exit\n\n: ");
-        scanf("%d", &perform);
+        // printf("\nDo you want to purchase airtime?\n\nPress 1 to Continue\nPress 2 to Exit\n\n: ");
+        // scanf("%d", &perform);
 
-        if (perform == 1)
-        {
-            Airtime();
-        }
-        else if (perform == 2)
-        {
-            return;
-        }
+        // if (perform == 1)
+        // {
+        //     Airtime();
+        // }
+        // else if (perform == 2)
+        // {
+        //     return;
+        // }
 
     }
-    else if (confirm == 2);
-    {
-         printf("Do you want to make new airtime purchase?\n\nPress 1 to Continue\nPress 2 to Exit\n\n: ");
-        scanf("%d", &perform);
-
-        if (perform == 1)
-        {
-            Airtime();
-        }
-        else if (perform == 2)
-        {
-            exit(2);
-        }
-    }
+    else if (confirm == 2)
+        return;
 }
 
