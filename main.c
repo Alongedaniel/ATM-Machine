@@ -16,18 +16,18 @@ int main()
     printf("\tATM MACHINE\n");
     printf("********************************\n");
     printf("********************************\n");
-    printf("********************************\n\n");
+    printf("********************************\n");
 
     /**
      * Request your name
      */
-    printf("ENTER YOUR NAME: ");
+    // printf("ENTER YOUR NAME: ");
     // Make variabes a string
-    char fname[30];
-    char lname[30];
+    // char fname[30];
+    // char lname[30];
 
-    scanf("%s ", fname);
-    scanf("%s", lname);
+    // scanf("%s ", fname);
+    // scanf("%s", lname);
 
     // if (!((((fname >= 'a') && (fname <= 'z')) || ((fname >= 'A') && (fname <= 'Z'))) && (((lname >= 'a') && (lname <= 'z')) || ((lname >= 'A') && (lname <= 'Z')))))
     // {
@@ -35,26 +35,26 @@ int main()
     //     main();
     // }
 
-    int a, p, x;
-    p = strlen(fname);
-    for (a = 0; a < p; a++)
-    {
-        if (!((fname[i] >= 'a' && fname[i] <= 'z') || (fname[i] >= 'A' && fname[i] <= 'Z') || (fname[i] == ' ')))
-        {
-            printf("\nName should contain letters only\n\n");
-            main();
-        }
-    }
+    // int a, p, x;
+    // p = strlen(fname);
+    // for (a = 0; a < p; a++)
+    // {
+    //     if (!((fname[i] >= 'a' && fname[i] <= 'z') || (fname[i] >= 'A' && fname[i] <= 'Z') || (fname[i] == ' ')))
+    //     {
+    //         printf("\nName should contain letters only\n\n");
+    //         main();
+    //     }
+    // }
 
-    x = strlen(lname);
-    for (a = 0; a < x; a++)
-    {
-        if (!((lname[i] >= 'a' && lname[i] <= 'z') || (lname[i] >= 'A' && lname[i] <= 'Z') || (lname[i] == ' ')))
-        {
-            printf("\nName should contain letters only\n\n");
-            main();
-        }
-    }
+    // x = strlen(lname);
+    // for (a = 0; a < x; a++)
+    // {
+    //     if (!((lname[i] >= 'a' && lname[i] <= 'z') || (lname[i] >= 'A' && lname[i] <= 'Z') || (lname[i] == ' ')))
+    //     {
+    //         printf("\nName should contain letters only\n\n");
+    //         main();
+    //     }
+    // }
 
     // Set up pin
     setPin();
@@ -67,13 +67,13 @@ int main()
          *
          */
 
-        printf("\n\tHello %s, Welcome to ATM\n", &lname);
+        printf("\n\tHELLO, WELCOME TO ATM\n");
 
         /**
          * ATM options
          */
 
-menu:
+    menu:
         printf("\n1: AIRTIME\t\t\t2: WITHDRAWAL\n\n3: TRANSFER\t\t\t4: CHANGE PIN\n\n5: CHECK BALANCE\t\t6: QUIT\n\n");
 
         printf("Select option: ");
@@ -86,7 +86,7 @@ menu:
         }
         else if (option == 2)
         {
-            // printf("\tWithdrawal\n");
+            printf("\n\t======== WITHDRAWAL ========\n");
             // DO WITHDRAWAL
             withdrawal();
         }
@@ -126,6 +126,7 @@ menu:
         }
 
         int menu;
+    exit_option:
         printf("PRESS 1 TO PERFORM ANOTHER TRANSACTION OR 0 TO EXIT: ");
         scanf("%d", &menu);
         if (menu == 1)
@@ -149,11 +150,16 @@ menu:
             }
             goto menu;
         }
-        else
+        else if (menu == 0)
         {
         exit:
             printf("THANK YOU FOR BANKING WITH US!\n");
             loop = -1;
+        }
+        else
+        {
+            printf("SELECT A VALID OPTION!\n");
+            goto exit_option;
         }
     }
     loop++;

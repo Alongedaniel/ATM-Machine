@@ -1,13 +1,12 @@
 #include "main.h"
 
-
 char setpin[i];
 // extern int loop;
 
 int setPin()
 {
 setPin:
-    printf("\nSET YOUR PIN\n(at least 4 digits)\n: ");
+    printf("SET YOUR PIN\n(at least 4 digits)\n: ");
     scanf("%s", setpin);
     // at least 4 characters can also be done
     // Another area to check

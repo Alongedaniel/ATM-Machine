@@ -14,7 +14,7 @@ void Transfer(void)
 
 Bank:
     printf("\nSELECT RECIPIENT'S BANK\n");
-    char BankName[7][30] = {"Sterling", "UBA", "First Bank", "Access Bank", "Heritage Bank", "GT Bank", "Exit"};
+    char BankName[7][30] = {"Sterling", "UBA", "First Bank", "Access Bank", "Heritage Bank", "GT Bank", "Back"};
     for (i = 0; i < 7; i++)
     {
         printf("%d. %s", i + 1, BankName[i]);
@@ -29,7 +29,7 @@ Bank:
         goto Bank;
     }
     if (BankChoice == 7)
-            return;
+        return;
 
     /** Using the strlen fun to test acc no validity*/
 
@@ -65,7 +65,7 @@ Bank:
         Balance -= TransferAmount;
         printf("\nTRANSFER SUCCESSFUL!\n");
         printf("You have successfully transferrred %.2f to %s, %s\n\n", TransferAmount, AccNo, BankName[BankChoice - 1]);
-     }
+    }
     else if (confirm == 2)
-            return;
+        return;
 }

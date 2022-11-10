@@ -6,7 +6,7 @@ extern float Balance;
 
 void Airtime()
 {
-    char carrier[5][9] = {"MTN", "Airtel", "Glo", "9Mobile", "Exit"};
+    char carrier[5][9] = {"MTN", "Airtel", "Glo", "9Mobile", "Back"};
     int i, j;
 
     printf("\nPURCHASE AIRTIME\n\n");
@@ -25,20 +25,19 @@ void Airtime()
     printf("\nSELECT MOBILE NETWORK CARRIER\n\n");
     for (i = 0; i < 5; i++)
     {
-        printf("Press %d for ", i+1);
+        printf("%d. ", i + 1);
         puts(carrier[i]);
     }
     printf("\n: ");
     scanf("%d", &j);
 
-
     int k = j;
-    while(k < 0 || k >5)
+    while (k < 0 || k > 5)
     {
-        printf ("\nSELECT VALID OPTION:\n\n");
+        printf("\nSELECT VALID OPTION:\n\n");
         for (i = 0; i < 5; i++)
         {
-            printf("Press %d for ", i+1);
+            printf("Press %d for ", i + 1);
             puts(carrier[i]);
         }
         printf("\n: ");
@@ -67,16 +66,16 @@ void Airtime()
         ++count;
     }while (l != 0);*/
 
-
-    do{
+    do
+    {
         printf("\nEnter valid Recipient mobile number.\nRecipient mobile number: +234(0)");
         scanf("%s", num);
 
-        if (strlen(num) == 10 )
+        if (strlen(num) == 10)
             break;
-    }while (strlen(num) != 10);
+    } while (strlen(num) != 10);
 
-    //float balance = bal;
+    // float balance = bal;
     float credit;
     printf("\nHOW MUCH DO YOU WANT TO RECHARGE?\n");
     scanf("%f", &credit);
@@ -96,9 +95,9 @@ void Airtime()
     {
         Balance -= credit;
         printf("\nRECHARGE SUCCESSFUL.\n");
-        //printf("%s", num);
+        // printf("%s", num);
 
-        printf("\nYou have successfully recharged %.2f on 0%s, %s.\nAmount to be received shortly.\n\n", credit, num, carrier[k-1] );
+        printf("\nYou have successfully recharged %.2f on 0%s, %s.\nAmount to be received shortly.\n\n", credit, num, carrier[k - 1]);
 
         // printf("\nDo you want to purchase airtime?\n\nPress 1 to Continue\nPress 2 to Exit\n\n: ");
         // scanf("%d", &perform);
@@ -111,9 +110,7 @@ void Airtime()
         // {
         //     return;
         // }
-
     }
     else if (confirm == 2)
         return;
 }
-
